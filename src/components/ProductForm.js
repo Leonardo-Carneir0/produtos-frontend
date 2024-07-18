@@ -1,3 +1,4 @@
+// src/components/ProductForm.js
 import React, { useState } from 'react';
 import api from '../services/api';
 
@@ -30,7 +31,7 @@ const ProductForm = ({ fetchProducts }) => {
       </div>
       <div>
         <label>Preço</label>
-        <input value={preco} onChange={(e) => setPreco(e.target.value)} />
+        <input value={preco} onChange={(e) => setPreco(e.target.value)} type="number" step="0.01" />
       </div>
       <button type="submit">Adicionar Produto</button>
       {message && <p>{message}</p>}

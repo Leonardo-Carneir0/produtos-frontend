@@ -1,3 +1,4 @@
+// src/components/ProductList.js
 import React, { useEffect, useState } from 'react';
 import api from '../services/api';
 import ProductItem from './ProductItem';
@@ -12,9 +13,9 @@ const ProductList = () => {
       try {
         const response = await api.get('/produtos');
         setProducts(response.data);
+        setLoading(false);
       } catch (err) {
         setError('Error fetching products');
-      } finally {
         setLoading(false);
       }
     };
